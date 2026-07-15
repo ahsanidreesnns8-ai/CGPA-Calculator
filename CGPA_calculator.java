@@ -2,7 +2,6 @@
 // 2025-CYS-112
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class CGPA_calculator
@@ -14,16 +13,16 @@ public class CGPA_calculator
         System.out.println("Welcome to GPA Calculator...");
         System.out.println("Let's start...");
         System.out.print("Do you want to start program (Y/N): ");
-        String start = sc.nextLine().trim().toUpperCase();
+        String start = sc.nextLine().toUpperCase();
 
         if (!start.equals("Y"))
         {
-            System.out.println("Oops you don't want to calculate your GPA...");
-            sc.close();
+            System.out.println("Oops! You don't want to calculate your GPA.");
             return;
         }
 
-        Map<String, Double> grades = new HashMap<>();
+        HashMap<String, Double> grades = new HashMap<>();
+
         grades.put("A+", 4.0);
         grades.put("A", 4.0);
         grades.put("A-", 3.7);
@@ -37,68 +36,55 @@ public class CGPA_calculator
         grades.put("D", 1.0);
         grades.put("F", 0.0);
 
-        System.out.println("\nGrade scale:");
-        for (Map.Entry<String, Double> entry : grades.entrySet())
-        {
-            System.out.println(entry.getKey() + " : " + entry.getValue());
-        }
+        System.out.println("\nGrade Scale:");
+        System.out.println("A+ : 4.0");
+        System.out.println("A  : 4.0");
+        System.out.println("A- : 3.7");
+        System.out.println("B+ : 3.3");
+        System.out.println("B  : 3.0");
+        System.out.println("B- : 2.7");
+        System.out.println("C+ : 2.3");
+        System.out.println("C  : 2.0");
+        System.out.println("C- : 1.7");
+        System.out.println("D+ : 1.3");
+        System.out.println("D  : 1.0");
+        System.out.println("F  : 0.0");
 
         System.out.print("\nHow many subjects did you study this semester: ");
-        int subjects = Integer.parseInt(sc.nextLine().trim());
+        int subjects = sc.nextInt();
+        sc.nextLine();
 
-        double totalPoints = 0.0;
-        double totalCreditHours = 0.0;
+        double totalPoints = 0;
+        int totalCreditHours = 0;
 
         for (int i = 1; i <= subjects; i++)
         {
-            System.out.print("\nSubject " + i + " name: ");
-            String name = sc.nextLine().trim();
+            System.out.print("\nEnter Subject Name: ");
+            String subject = sc.nextLine();
 
-            int creditHours = readCreditHours(sc, name);
-            double gradePoint = readGrade(sc, grades, name);
+            System.out.print("Enter Credit Hours: ");
+            int creditHours = sc.nextInt();
+            sc.nextLine();
 
-            totalPoints += gradePoint * creditHours;
-            totalCreditHours += creditHours;
+            System.out.print("Enter Grade: ");
+            String grade = sc.nextLine().toUpperCase();
+
+            while (!grades.containsKey(grade))
+            {
+                System.out.println("Invalid Grade! Enter Again.");
+                System.out.print("Enter Grade: ");
+                grade = sc.nextLine().toUpperCase();
+            }
+
+            totalPoints = totalPoints + (grades.get(grade) * creditHours);
+            totalCreditHours = totalCreditHours + creditHours;
         }
 
         double gpa = totalPoints / totalCreditHours;
-        System.out.printf("%nYour GPA is: %.2f%n", gpa);
-        System.out.println("Congratulations...");
+
+        System.out.printf("\nYour GPA is: %.2f\n", gpa);
+        System.out.println("Congratulations!");
 
         sc.close();
-    }
-
-    private static int readCreditHours(Scanner sc, String subjectName)
-    {
-        while (true)
-        {
-            System.out.print("Credit hours for " + subjectName + ": ");
-            String input = sc.nextLine().trim();
-            try {
-                int value = Integer.parseInt(input);
-                if (value > 0)
-                {
-                    return value;
-                }
-                System.out.println("Credit hours must be a positive number.");
-            }
-            catch (NumberFormatException e)
-            {
-                System.out.println("Please enter a valid whole number.");
-            }
-        }
-    }
-
-    private static double readGrade(Scanner sc, Map<String, Double> grades, String subjectName) {
-        while (true)
-        {
-            System.out.print("Grade for " + subjectName + ": ");
-            String grade = sc.nextLine().trim().toUpperCase();
-            if (grades.containsKey(grade))
-            {
-                return grades.get(grade);
-            }
-            System.out.println("Invalid grade. Please enter one of: " + grades.keySet());
-        }
     }
 }
