@@ -1,7 +1,6 @@
 // Ahsan Idrees
 // 2025-CYS-112
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class CGPA_calculator
@@ -20,21 +19,6 @@ public class CGPA_calculator
             System.out.println("Oops! You don't want to calculate your GPA.");
             return;
         }
-
-        HashMap<String, Double> grades = new HashMap<>();
-
-        grades.put("A+", 4.0);
-        grades.put("A", 4.0);
-        grades.put("A-", 3.7);
-        grades.put("B+", 3.3);
-        grades.put("B", 3.0);
-        grades.put("B-", 2.7);
-        grades.put("C+", 2.3);
-        grades.put("C", 2.0);
-        grades.put("C-", 1.7);
-        grades.put("D+", 1.3);
-        grades.put("D", 1.0);
-        grades.put("F", 0.0);
 
         System.out.println("\nGrade Scale:");
         System.out.println("A+ : 4.0");
@@ -69,14 +53,63 @@ public class CGPA_calculator
             System.out.print("Enter Grade: ");
             String grade = sc.nextLine().toUpperCase();
 
-            while (!grades.containsKey(grade))
+            double gradePoint = -1;
+
+            while (gradePoint == -1)
             {
-                System.out.println("Invalid Grade! Enter Again.");
-                System.out.print("Enter Grade: ");
-                grade = sc.nextLine().toUpperCase();
+                if (grade.equals("A+") || grade.equals("A"))
+                {
+                    gradePoint = 4.0;
+                }
+                else if (grade.equals("A-"))
+                {
+                    gradePoint = 3.7;
+                }
+                else if (grade.equals("B+"))
+                {
+                    gradePoint = 3.3;
+                }
+                else if (grade.equals("B"))
+                {
+                    gradePoint = 3.0;
+                }
+                else if (grade.equals("B-"))
+                {
+                    gradePoint = 2.7;
+                }
+                else if (grade.equals("C+"))
+                {
+                    gradePoint = 2.3;
+                }
+                else if (grade.equals("C"))
+                {
+                    gradePoint = 2.0;
+                }
+                else if (grade.equals("C-"))
+                {
+                    gradePoint = 1.7;
+                }
+                else if (grade.equals("D+"))
+                {
+                    gradePoint = 1.3;
+                }
+                else if (grade.equals("D"))
+                {
+                    gradePoint = 1.0;
+                }
+                else if (grade.equals("F"))
+                {
+                    gradePoint = 0.0;
+                }
+                else
+                {
+                    System.out.println("Invalid Grade! Enter Again.");
+                    System.out.print("Enter Grade: ");
+                    grade = sc.nextLine().toUpperCase();
+                }
             }
 
-            totalPoints = totalPoints + (grades.get(grade) * creditHours);
+            totalPoints = totalPoints + (gradePoint * creditHours);
             totalCreditHours = totalCreditHours + creditHours;
         }
 
