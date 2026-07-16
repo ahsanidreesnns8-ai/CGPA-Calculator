@@ -1,49 +1,53 @@
-# 🎓 GPA Calculator (Java)
+# 🎓 GPA Calculator
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Language-Java-orange?style=for-the-badge&logo=java" />
-  <img src="https://img.shields.io/badge/IDE-IntelliJ%20IDEA-blue?style=for-the-badge&logo=intellij-idea" />
-  <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Java-17+-orange?style=for-the-badge&logo=openjdk" />
+  <img src="https://img.shields.io/badge/Platform-Console-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge" />
+</p>
+
+<p align="center">
+A simple and beginner-friendly Java application to calculate Semester GPA using letter grades and credit hours.
 </p>
 
 ---
 
-## 📖 Overview
+# 📖 About
 
-The **GPA Calculator** is a Java console-based application that calculates a student's **Semester GPA** based on the grades and credit hours entered by the user.
+**GPA Calculator** is a Java console application developed to calculate a student's **Semester GPA** accurately using the weighted average method.
 
-The project is designed using basic Java programming concepts and provides an easy-to-use interface for calculating GPA accurately.
+The project focuses on fundamental Java programming concepts, making it suitable for beginners learning Object-Oriented Programming and console application development.
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-- 🎯 Calculates Semester GPA
-- 📚 Supports multiple subjects
-- 📝 User-friendly console interface
-- 🔢 Credit hour-based GPA calculation
+- 📚 Calculate Semester GPA
+- 📝 Enter unlimited subjects
+- 🎯 Credit hour-based GPA calculation
 - ✅ Grade validation
-- ⚡ Fast and lightweight
-- 💻 Beginner-friendly Java project
+- ⚡ Lightweight console application
+- 💻 Beginner-friendly source code
+- 🔄 Easy to modify and extend
 
 ---
 
-## 🛠️ Technologies Used
+# 🛠 Technologies Used
 
 - Java
 - Object-Oriented Programming (OOP)
-- HashMap
-- Loops
-- Conditional Statements
 - Scanner Class
+- Loops (`for`, `while`)
+- Conditional Statements (`if-else`)
+- String Handling
 
 ---
 
-## 📊 Supported Grade Scale
+# 📊 Grade Scale
 
-| Grade | Grade Points |
-|--------|--------------|
+| Grade | Grade Point |
+|:-----:|:-----------:|
 | A+ | 4.0 |
 | A | 4.0 |
 | A- | 3.7 |
@@ -59,29 +63,42 @@ The project is designed using basic Java programming concepts and provides an ea
 
 ---
 
-## 🚀 How to Run
+# 🧮 GPA Formula
 
-1. Clone this repository
+```text
+GPA = Σ (Grade Point × Credit Hours)
+      --------------------------------
+           Total Credit Hours
+```
+
+---
+
+# 🚀 Getting Started
+
+### Clone Repository
 
 ```bash
 git clone https://github.com/ahsanidreesnns8-ai/GPA-Calculator.git
 ```
 
-2. Open the project in IntelliJ IDEA or any Java IDE.
-
-3. Compile and run:
+### Compile
 
 ```bash
 javac CGPA_calculator.java
+```
+
+### Run
+
+```bash
 java CGPA_calculator
 ```
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```
-GPA-Calculator/
+GPA-Calculator
 │
 ├── CGPA_calculator.java
 ├── README.md
@@ -90,14 +107,14 @@ GPA-Calculator/
 
 ---
 
-## 🖥️ Sample Output
+# 💻 Sample Output
 
-```
+```text
 Welcome to GPA Calculator...
 
 Do you want to start program (Y/N): Y
 
-How many subjects did you study this semester: 5
+How many subjects did you study this semester: 4
 
 Enter Subject Name: OOP
 Enter Credit Hours: 3
@@ -107,55 +124,77 @@ Enter Subject Name: Database
 Enter Credit Hours: 3
 Enter Grade: B+
 
-...
+Enter Subject Name: Calculus
+Enter Credit Hours: 3
+Enter Grade: A-
 
-Your GPA is: 3.67
+Enter Subject Name: Physics
+Enter Credit Hours: 2
+Enter Grade: B
+
+Your GPA is: 3.63
+
 Congratulations!
 ```
 
 ---
 
-## 🎯 Learning Outcomes
+# 📚 Concepts Covered
 
-This project demonstrates:
-
-- Java Programming Fundamentals
-- Console-Based Application Development
-- User Input Handling
+- Variables
+- User Input
+- Scanner Class
+- String Manipulation
+- Loops
+- Conditional Statements
+- Arithmetic Operations
 - GPA Calculation Logic
-- HashMap Implementation
-- Loops and Conditional Statements
-- Problem Solving
 
 ---
 
-## 👨‍💻 Developer
+# 🚀 Future Enhancements
+
+- Calculate CGPA
+- Menu-driven application
+- Store semester records
+- Export GPA report
+- Java Swing GUI version
+- Database integration
+
+---
+
+# 👨‍💻 Developer
 
 **Muhammad Ahsan Idrees**
 
-Cybersecurity Student  
+**BS Cyber Security**  
 University of Engineering and Technology (UET), Lahore
 
-### 🌐 Connect With Me
+### Connect with Me
 
-**LinkedIn**
-> https://www.linkedin.com/in/m-ahsan-idrees-664126329/
-
-**GitHub**
-> https://github.com/ahsanidreesnns8-ai
+- **GitHub:** https://github.com/ahsanidreesnns8-ai
+- **LinkedIn:** https://www.linkedin.com/in/m-ahsan-idrees-664126329/
 
 ---
 
-## ⭐ Support
+# 🤝 Contributions
 
-If you found this project helpful, consider giving it a **⭐ Star** on GitHub.
+Contributions, suggestions, and improvements are always welcome.
 
-It motivates me to continue building and sharing more Java and Cybersecurity projects.
+If you have an idea to improve this project, feel free to fork the repository and submit a pull request.
 
 ---
 
-## 📜 License
+# ⭐ Show Your Support
+
+If you found this project helpful, please consider giving it a **⭐ Star** on GitHub.
+
+It helps support future projects and encourages continuous development.
+
+---
+
+# 📜 License
 
 This project is licensed under the **MIT License**.
 
-Feel free to use, modify, and learn from it for educational purposes.
+See the **LICENSE** file for complete license information.
